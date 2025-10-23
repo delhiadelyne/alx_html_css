@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Headphones — Our Results (CSS Pentagons)</title>
+  <link rel="stylesheet" href="6-styles.css" />
+</head>
+<body>
+  <!-- Minimal header / hero for context -->
+  <header class="hero">
+    <div class="container">
+      <h1>Headphones</h1>
+      <p>Pure CSS pentagons demo — Our results section</p>
+    </div>
+  </header>
+
+  <!-- What we do (short placeholder) -->
+  <section class="what-we-do">
+    <div class="container">
+      <h2>What we do…</h2>
+      <p>We craft audio experiences — short placeholder for context.</p>
+    </div>
+  </section>
+
+  <!-- Our Results (pentagon shapes created with CSS only) -->
+  <section class="our-results">
+    <div class="container">
+      <h2>Our results speak for themselves</h2>
+      <p class="lead">
+        Performance metrics shown below — each metric is presented inside a CSS pentagon (no images).
+      </p>
+
+      <div class="results-grid" role="list">
+        <article class="result-card" role="listitem" aria-labelledby="r1-title">
+          <div class="pentagon pentagon--filled">
+            <div class="pentagon__content">
+              <span class="value">+2%</span>
+              <span class="label" id="r1-title">Performance</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="result-card" role="listitem" aria-labelledby="r2-title">
+          <div class="pentagon pentagon--outlined">
+            <div class="pentagon__content">
+              <span class="value">+50%</span>
+              <span class="label" id="r2-title">Sound Quality</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="result-card" role="listitem" aria-labelledby="r3-title">
+          <div class="pentagon pentagon--filled alt">
+            <div class="pentagon__content">
+              <span class="value">+70%</span>
+              <span class="label" id="r3-title">User Satisfaction</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="result-card" role="listitem" aria-labelledby="r4-title">
+          <div class="pentagon pentagon--outlined alt">
+            <div class="pentagon__content">
+              <span class="value">+90%</span>
+              <span class="label" id="r4-title">Comfort</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2025 Headphones — CSS shapes demo</p>
+    </div>
+  </footer>
+</body>
+</html>

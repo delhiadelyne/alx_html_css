@@ -1,0 +1,164 @@
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root{
+  --accent: #FF6565;
+  --accent-dark: #e34f4f;
+  --bg: #0f1720;
+  --card-bg: #ffffff;
+  --muted: #6b6b6b;
+  --max-w: 1000px;
+  --gap: 28px;
+  --pentagon-size: 160px; /* base size, scales in media query */
+}
+
+/* Page basics */
+body{
+  font-family: "Source Sans Pro", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#071118 0%, #0f1720 100%);
+  color: #fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* container to center content */
+.container{
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 28px;
+}
+
+/* Simple header */
+.hero{
+  padding: 40px 0;
+  text-align: center;
+}
+.hero h1 { font-size: 2rem; margin-bottom: 6px; }
+.hero p { color: #cfd8dc; }
+
+/* Our results section */
+.our-results{
+  padding: 40px 12px 80px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.03), rgba(0,0,0,0.03));
+  color: #fff;
+}
+.our-results h2 { text-align: center; font-size: 1.8rem; margin-bottom: 8px; }
+.our-results .lead { text-align:center; color: #cfd8dc; margin-bottom: 30px; }
+
+/* Grid */
+.results-grid{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--gap);
+  align-items: start;
+  justify-items: center;
+  width: 100%;
+}
+
+/* each card wrapper (keeps accessible semantics) */
+.result-card{
+  width: 100%;
+  display:flex;
+  justify-content:center;
+}
+
+/* PENTAGON - base shape using clip-path polygon
+   polygon coordinates create a regular-ish pentagon */
+.pentagon{
+  width: var(--pentagon-size);
+  height: var(--pentagon-size);
+  position: relative;
+  display: grid;
+  place-items: center;
+  clip-path: polygon(
+    50% 0%,
+    93% 35%,
+    75% 95%,
+    25% 95%,
+    7% 35%
+  );
+  -webkit-clip-path: polygon(
+    50% 0%,
+    93% 35%,
+    75% 95%,
+    25% 95%,
+    7% 35%
+  );
+  transition: transform .28s ease, box-shadow .28s ease;
+  cursor: default;
+}
+
+/* filled style */
+.pentagon--filled{
+  background: linear-gradient(180deg, var(--accent), var(--accent-dark));
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+}
+
+/* outlined style (transparent interior, solid border) */
+.pentagon--outlined{
+  background: transparent;
+  border: 6px solid rgba(255,101,101,0.18);
+  box-shadow: none;
+}
+
+/* alternative coloring for variety */
+.pentagon.alt.pentagon--filled { background: linear-gradient(180deg, #6BCB77, #4FAF5E); }
+.pentagon.alt.pentagon--outlined { border-color: rgba(107,203,119,0.18); }
+
+/* content area centered inside the pentagon */
+.pentagon__content{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding: 8px;
+  width: 78%;
+  height: 78%;
+  color: white;
+  transform: translateY(-2%);
+}
+
+/* metric value large */
+.value{
+  font-size: 1.6rem;
+  font-weight:700;
+  letter-spacing: .5px;
+  display:block;
+  margin-bottom:4px;
+}
+
+/* label smaller */
+.label{
+  font-size: .95rem;
+  color: rgba(255,255,255,0.95);
+}
+
+/* hover effect */
+.pentagon:hover{
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.45);
+}
+
+/* For outlined ones, make text darker so visible on background */
+.pentagon--outlined .value,
+.pentagon--outlined .label{
+  color: var(--card-bg);
+  /* when background page dark, make text light */
+}
+
+/* responsiveness: smaller screens */
+@media (max-width: 900px){
+  .results-grid{ grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  :root { --pentagon-size: 140px; }
+}
+
+@media (max-width: 480px){
+  .results-grid{ grid-template-columns: 1fr; gap: 20px; }
+  :root { --pentagon-size: 120px; }
+  .our-results { padding-bottom: 40px; }
+  .hero h1 { font-size: 1.4rem; }
+}
+
+/* footer */
+.footer{ padding: 30px 12px; text-align:center; color:#9aa4a8; }
