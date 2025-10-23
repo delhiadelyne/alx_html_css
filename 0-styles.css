@@ -1,0 +1,111 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Variables */
+:root {
+  --primary-color: #FF6565;
+  --text-color: #fff;
+  --max-width: 1000px;
+}
+
+/* General Styles */
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  color: var(--text-color);
+  background-color: #000;
+}
+
+/* Header */
+.header {
+  background: url("images/hero-bg.jpg") center/cover no-repeat;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Navigation */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: var(--primary-color);
+}
+
+/* Hero section */
+.hero {
+  text-align: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 3rem 1rem;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.8rem 2rem;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: bold;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* Mobile version */
+@media screen and (max-width: 480px) {
+  .nav-links {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+    font-size: 1.5rem;
+    background: none;
+    color: var(--text-color);
+    border: none;
+  }
+
+  .hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+}
